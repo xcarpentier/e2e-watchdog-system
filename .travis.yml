@@ -42,3 +42,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: false
+
+notifications:
+  webhooks: https://xc-e2e-webhook.now.sh/
