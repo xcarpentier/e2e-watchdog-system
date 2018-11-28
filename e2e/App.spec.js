@@ -1,7 +1,13 @@
 const TIMEOUT = 120000
 
 describe('App', () => {
-  it('should display login', async () => {
+  before(async () => {
+    await device.launchApp({
+      permissions: { location: 'always', notifications: 'YES' },
+    })
+  })
+
+  it('should login', async () => {
     await waitFor(element(by.label('Login screen')))
       .toBeVisible()
       .withTimeout(TIMEOUT)
@@ -19,11 +25,9 @@ describe('App', () => {
     const signInButton = element(by.label('Submit to sign in'))
     await expect(signInButton).toBeVisible()
     await signInButton.tap()
-  })
 
-  // it('should display map', async () => {
-  //   await waitFor(element(by.label('This is the WATCHDOG map')))
-  //     .toBeVisible()
-  //     .withTimeout(TIMEOUT)
-  // })
+    await waitFor(element(by.label('This is the WATCHDOG map')))
+      .toBeVisible()
+      .withTimeout(TIMEOUT)
+  })
 })

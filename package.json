@@ -7,12 +7,10 @@
   "license": "MIT",
   "scripts": {
     "unzip": "rm -rf ./bin/*.app && tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/",
-    "test": "detox test --configuration ios.sim.release --cleanup --artifacts-location ./artifacts --record-logs all --record-videos all"
+    "test": "detox test --configuration ios.sim.release --cleanup --artifacts-location ./artifacts --record-logs failing --record-videos all"
   },
   "dependencies": {
     "detox": "9.1.2",
-    "detox-expo-helpers": "0.2.0",
-    "expo-detox-hook": "1.0.10",
     "mocha": "5.2.0"
   },
   "detox": {
@@ -20,7 +18,7 @@
       "ios.sim.release": {
         "binaryPath": "bin/watchdog-app.app",
         "type": "ios.simulator",
-        "name": "iPhone X"
+        "name": "iPhone 7"
       }
     },
     "test-runner": "mocha"
