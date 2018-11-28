@@ -28,6 +28,7 @@ install:
   - npm install -g detox-cli
   - npm install
   - npm run unzip
+  - detox clean-framework-cache && detox build-framework-cache
 
 script:
   - npm run test
