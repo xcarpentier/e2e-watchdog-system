@@ -1,0 +1,20 @@
+{
+  "name": "e2e-watchdog-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/xcarpentier/e2e-watchdog-system",
+  "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
+  "license": "MIT",
+  "scripts": {
+    "unzip": "tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/watchdog-app.app"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.release": {
+        "binaryPath": "bin/watchdog-app.app",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    }
+  }
+}
