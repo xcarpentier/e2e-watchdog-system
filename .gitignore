@@ -63,3 +63,6 @@ typings/
 bin/watchdog-app.app/
 
 .vscode
+
+artifacts/*
+!artifacts/.keep

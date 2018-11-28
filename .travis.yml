@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10.1
+osx_image: xcode9.3
 
 branches:
   only:
@@ -8,6 +8,7 @@ branches:
 env:
   global:
     - NODE_VERSION=stable
+    - CODE_SIGNING_REQUIRED=NO
 
 install:
   - brew tap wix/brew
@@ -16,10 +17,17 @@ install:
   - export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   - nvm install $NODE_VERSION
   - nvm use $NODE_VERSION
-
   - npm install -g react-native-cli
   - npm install -g detox-cli
   - yarn unzip
 
 script:
   - detox test --configuration ios.sim.release --cleanup
+# deploy:
+#   provider: releases
+#   api_key: "GITHUB OAUTH TOKEN"
+#   file_glob: true
+#   file: directory/**/*
+#   skip_cleanup: true
+#   on:
+#     tags: true

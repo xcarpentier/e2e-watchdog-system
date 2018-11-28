@@ -1,5 +1,4 @@
 const detox = require('detox')
-// const { reloadApp } = require('detox-expo-helpers');
 const config = require('../package.json').detox
 const adapter = require('detox/runners/mocha/adapter')
 

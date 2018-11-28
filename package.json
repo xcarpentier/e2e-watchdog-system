@@ -6,8 +6,8 @@
   "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
   "license": "MIT",
   "scripts": {
-    "unzip": "tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/",
-    "test": "detox test --configuration ios.sim.release --cleanup"
+    "unzip": "rm -rf ./bin/*.app && tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/",
+    "test": "detox test --configuration ios.sim.release --cleanup --artifacts-location ./artifacts --record-logs all --take-screenshots all"
   },
   "dependencies": {
     "detox": "9.1.2",
