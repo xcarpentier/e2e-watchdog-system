@@ -6,15 +6,23 @@
   "author": "Xavier Carpentier <xcapetir@gmail.com> (https://xaviercarpentier.com/)",
   "license": "MIT",
   "scripts": {
-    "unzip": "tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/watchdog-app.app"
+    "unzip": "tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/",
+    "test": "detox test --configuration ios.sim.release --cleanup"
+  },
+  "dependencies": {
+    "detox": "9.1.2",
+    "detox-expo-helpers": "0.2.0",
+    "expo-detox-hook": "1.0.10",
+    "mocha": "5.2.0"
   },
   "detox": {
     "configurations": {
       "ios.sim.release": {
         "binaryPath": "bin/watchdog-app.app",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone X"
       }
-    }
+    },
+    "test-runner": "mocha"
   }
 }
