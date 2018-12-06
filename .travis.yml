@@ -40,7 +40,7 @@ deploy:
   api_key: $GITHUB_OAUTH_TOKEN
   file_glob: true
   file:
-    - artifacts/**/*.png
+    - artifacts/**/*_${TRAVIS_BUILD_NUMBER}.png
     - artifacts/**/*.log
   skip_cleanup: true
   on:
