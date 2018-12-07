@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "unzip": "rm -rf ./bin/*.app && tar -xzf ./archive/watchdog-app-simulator.tar.gz -C ./bin/",
-    "test": "detox test --configuration ios.sim.release --cleanup --artifacts-location ./artifacts --record-logs failing --take-screenshots all"
+    "test": "detox test --configuration ios.sim.release --cleanup --artifacts-location ./artifacts --take-screenshots all"
   },
   "dependencies": {
     "detox": "9.1.2",
