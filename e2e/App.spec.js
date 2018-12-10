@@ -38,7 +38,7 @@ describe('App', () => {
 
   it('5 should tap to open menu', async () => {
     const drawerIcon = element(by.label('Tap to open the menu'))
-    await expect(drawerIcon).toBeVisible()
+    await expect(drawerIcon).toExist()
     await drawerIcon.tap()
   })
 
